@@ -80,5 +80,41 @@
       setTimeout(() => window.location.href = 'index.html', 1500);
     });
   </script>
+  <script>
+  // 🌙 DARK MODE UNIVERSAL TOGGLE
+  document.addEventListener("DOMContentLoaded", () => {
+    const darkToggleBtn = document.getElementById("dark-toggle");
+
+    // If already saved preference, apply it
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark");
+    }
+
+    if (darkToggleBtn) {
+      darkToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const isDark = document.body.classList.contains("dark");
+        localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+
+        const msg = isDark ? "🌙 Dark Mode Enabled" : "☀️ Light Mode Enabled";
+        const toast = document.createElement("div");
+        toast.innerText = msg;
+        toast.style.position = "fixed";
+        toast.style.bottom = "30px";
+        toast.style.left = "50%";
+        toast.style.transform = "translateX(-50%)";
+        toast.style.background = "#4a7c59";
+        toast.style.color = "#fff";
+        toast.style.padding = "10px 20px";
+        toast.style.borderRadius = "8px";
+        toast.style.boxShadow = "0 2px 10px rgba(0,0,0,0.2)";
+        toast.style.zIndex = "1000";
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2500);
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
