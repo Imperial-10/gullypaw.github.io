@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Features - GullyPaw</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="gullypawlogo.png" type="image/png"/>
+</head>
+<body>
+
+  <header style="display: flex; flex-direction: column; align-items: center;">
+    <img src="gullypawlogo.png" alt="GullyPaw Logo" style="height: 60px; margin-bottom: 0.5rem;">
+    <div class="logo">GullyPaw</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="impact.html">Impact</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="feed.html">Feed</a>
+      <a href="report.html">Report</a>
+      <a href="login.html">Login</a>
+      <button id="dark-toggle">🌓 Toggle Dark Mode</button>
+    </nav>
+    <select id="language-selector" style="margin-left: auto;">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="kn">ಕನ್ನಡ</option>
+    </select>
+  </header>
+
+  <main>
+    <h2 data-text="featuresTitle">Features of GullyPaw</h2>
+    <ul>
+      <li data-text="f1">📸 AI-powered image recognition of wounded/aggressive dogs</li>
+      <li data-text="f2">🗺️ Auto-location tagging and severity-based priority system</li>
+      <li data-text="f3">📊 NGO dashboard with maps, filters, and rescue logs</li>
+      <li data-text="f4">🎮 Gamified user system with points, badges, and rewards</li>
+      <li data-text="f5">💬 Multi-language interface (English, Hindi, Kannada)</li>
+      <li data-text="f6">🐕 Feed-a-Dog feature with ₹20 contribution per meal</li>
+      <li data-text="f7">🏠 Adoption portal with verified animal profiles</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GullyPaw. Every tag makes a difference.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('language-selector').addEventListener('change', () => {
+      const lang = document.getElementById('language-selector').value;
+      const strings = {
+        en: {
+          featuresTitle: "Features of GullyPaw",
+          f1: "📸 AI-powered image recognition of wounded/aggressive dogs",
+          f2: "🗺️ Auto-location tagging and severity-based priority system",
+          f3: "📊 NGO dashboard with maps, filters, and rescue logs",
+          f4: "🎮 Gamified user system with points, badges, and rewards",
+          f5: "💬 Multi-language interface (English, Hindi, Kannada)",
+          f6: "🐕 Feed-a-Dog feature with ₹20 contribution per meal",
+          f7: "🏠 Adoption portal with verified animal profiles"
+        },
+        hi: {
+          featuresTitle: "गलीपॉ की विशेषताएं",
+          f1: "📸 घायल/आक्रामक कुत्तों की AI-आधारित पहचान",
+          f2: "🗺️ स्थान टैगिंग और प्राथमिकता प्रणाली",
+          f3: "📊 NGO के लिए मानचित्र और बचाव लॉग सहित डैशबोर्ड",
+          f4: "🎮 बैज और रिवार्ड्स के साथ गेमिफाइड यूज़र सिस्टम",
+          f5: "💬 बहुभाषी इंटरफ़ेस (अंग्रेज़ी, हिंदी, कन्नड़)",
+          f6: "🐕 ₹20 में एक कुत्ते को खाना खिलाने का विकल्प",
+          f7: "🏠 सत्यापित प्रोफ़ाइलों के साथ गोद लेने का पोर्टल"
+        },
+        kn: {
+          featuresTitle: "ಗುಲ್ಲಿಪಾ ವೈಶಿಷ್ಟ್ಯಗಳು",
+          f1: "📸 ಗಾಯಗೊಂಡ/ಆಕ್ರಮಕ ನಾಯಿಗಳ ಎಐ ಗುರುತುವು",
+          f2: "🗺️ ಸ್ಥಳ ಟ್ಯಾಗಿಂಗ್ ಮತ್ತು ಪ್ರಾಮುಖ್ಯತಾ ವ್ಯವಸ್ಥೆ",
+          f3: "📊 ನಕ್ಷೆ ಮತ್ತು ರೆಸ್ಕ್ಯೂ ಲಾಗ್‌ಗಳೊಂದಿಗೆ ಎನ್‌ಜಿಒ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+          f4: "🎮 ಪಾಯಿಂಟ್‌ಗಳು, ಬ್ಯಾಡ್ಜ್‌ಗಳು ಮತ್ತು ಬಹುಮಾನಗಳೊಂದಿಗೆ ಆಟದ ರೀತಿಯ ಸಿಸ್ಟಮ್",
+          f5: "💬 ಬಹುಭಾಷಾ ಇಂಟರ್ಫೇಸ್ (ಇಂಗ್ಲಿಷ್, ಹಿಂದಿ, ಕನ್ನಡ)",
+          f6: "🐕 ₹20 ಗೆ ನಾಯಿ ಊಟದ ಆಯ್ಕೆ",
+          f7: "🏠 ಪರಿಶೀಲಿತ ಪ್ರೊಫೈಲ್‌ಗಳೊಂದಿಗೆ ದತ್ತು ಪಡೆಯುವ ಪೋರ್ಟಲ್"
+        }
+      };
+
+      const t = strings[lang];
+      for (const key in t) {
+        const el = document.querySelector(`[data-text="${key}"]`);
+        if (el) el.innerText = t[key];
+      }
+    });
+  </script>
+
+</body>
+</html>

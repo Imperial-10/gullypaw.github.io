@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - GullyPaw</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="gullypawlogo.png" type="image/png"/>
+</head>
+<body>
+
+  <header style="display: flex; flex-direction: column; align-items: center;">
+    <img src="gullypawlogo.png" alt="GullyPaw Logo" style="height: 60px; margin-bottom: 0.5rem;">
+    <div class="logo">GullyPaw</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="impact.html">Impact</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="feed.html">Feed</a>
+      <a href="report.html">Report</a>
+      <a href="login.html">Login</a>
+      <button id="dark-toggle">🌓 Toggle Dark Mode</button>
+    </nav>
+    <select id="language-selector" style="margin-left: auto;">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="kn">ಕನ್ನಡ</option>
+    </select>
+  </header>
+
+  <main>
+    <h2 data-text="aboutTitle">About GullyPaw</h2>
+    <p data-text="aboutIntro">
+      GullyPaw is a youth-led civic-tech platform that uses AI and crowdsourcing to rescue stray dogs more efficiently. With real-time tagging, location-based reporting, and NGO integration, we bridge the gap between citizens and animal welfare organizations.
+    </p>
+
+    <h3 data-text="aboutMissionTitle">Our Mission</h3>
+    <p data-text="aboutMission">
+      To empower everyday citizens to become street dog saviors by making rescue as simple as a snap and tag.
+    </p>
+
+    <h3 data-text="aboutVisionTitle">Our Vision</h3>
+    <p data-text="aboutVision">
+      A world where no stray dog suffers unseen. A society where compassion meets technology.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GullyPaw. Every tag makes a difference.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('language-selector').addEventListener('change', () => {
+      const lang = document.getElementById('language-selector').value;
+      const strings = {
+        en: {
+          aboutTitle: "About GullyPaw",
+          aboutIntro: "GullyPaw is a youth-led civic-tech platform that uses AI and crowdsourcing to rescue stray dogs more efficiently. With real-time tagging, location-based reporting, and NGO integration, we bridge the gap between citizens and animal welfare organizations.",
+          aboutMissionTitle: "Our Mission",
+          aboutMission: "To empower everyday citizens to become street dog saviors by making rescue as simple as a snap and tag.",
+          aboutVisionTitle: "Our Vision",
+          aboutVision: "A world where no stray dog suffers unseen. A society where compassion meets technology."
+        },
+        hi: {
+          aboutTitle: "गलीपॉ के बारे में",
+          aboutIntro: "गलीपॉ एक युवाओं द्वारा संचालित सिविक-टेक प्लेटफ़ॉर्म है जो एआई और भीड़-भाड़ की मदद से आवारा कुत्तों को कुशलता से बचाता है। यह रीयल-टाइम टैगिंग, स्थान-आधारित रिपोर्टिंग और NGO एकीकरण के माध्यम से काम करता है।",
+          aboutMissionTitle: "हमारा मिशन",
+          aboutMission: "हर आम नागरिक को स्ट्रीट डॉग सेवियर बनाना — बस एक क्लिक में रेस्क्यू।",
+          aboutVisionTitle: "हमारा विज़न",
+          aboutVision: "एक ऐसा समाज जहाँ कोई भी आवारा कुत्ता अनदेखा न हो और करुणा तकनीक से मिले।"
+        },
+        kn: {
+          aboutTitle: "ಗುಲ್ಲಿಪಾ ಬಗ್ಗೆ",
+          aboutIntro: "ಗುಲ್ಲಿಪಾ ಎಂಬುದು ಯುವಸೇವಕರಿಂದ ನಡೆಸಲ್ಪಡುವ ಸಿವಿಕ್-ಟೆಕ್ ವೇದಿಕೆಯಾಗಿದ್ದು, ಎಐ ಮತ್ತು ಕ್ರೌಡ್‌ಸೋರ್ಸಿಂಗ್‌ನ ಮೂಲಕ ಬೀದಿ ನಾಯಿಗಳನ್ನು ಪರಿಣಾಮಕಾರಿಯಾಗಿ ರಕ್ಷಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. ನಿಖರ ಸಮಯದ ಟ್ಯಾಗಿಂಗ್ ಮತ್ತು ಎನ್‌ಜಿಒ ಸಮನ್ವಯ ಇದರ ಹಾರ್ದಿಕತೆ.",
+          aboutMissionTitle: "ನಮ್ಮ ಮಿಷನ್",
+          aboutMission: "ಪ್ರತಿ ನಾಗರಿಕನೂ ಬೀದಿ ನಾಯಿಗೆ ನೆರವಾಗಲು ಸಜ್ಜಾಗಬೇಕು — ಕೇವಲ ಒಂದು ಕ್ಲಿಕ್ಕಿನಲ್ಲಿ.",
+          aboutVisionTitle: "ನಮ್ಮ ದೃಷ್ಟಿಕೋನ",
+          aboutVision: "ಯಾವುದೇ ಬೀದಿ ನಾಯಿ ನೋವಿಗೆ ಒಳಪಡುವುದಿಲ್ಲವಾದ ಸಮುದಾಯ. ತಂತ್ರಜ್ಞಾನವು ಕರುಣೆಗೆ ಸೇರುವ duniyā."
+        }
+      };
+
+      const t = strings[lang];
+      for (const key in t) {
+        const el = document.querySelector(`[data-text="${key}"]`);
+        if (el) el.innerText = t[key];
+      }
+    });
+  </script>
+
+</body>
+</html>

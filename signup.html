@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup | GullyPaw</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="gullypawlogo.png" type="image/png">
+</head>
+<body>
+  <header style="display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
+    <div style="display: flex; align-items: center;">
+      <img src="gullypawlogo.png" alt="Logo" style="height: 50px; margin-right: 1rem;" />
+      <div class="logo" data-text="appName">GullyPaw</div>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <button id="dark-toggle" style="margin-right: 1rem;">🌓 <span data-text="darkToggle">Toggle Dark Mode</span></button>
+      <select id="language-selector">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+        <option value="kn">ಕನ್ನಡ</option>
+      </select>
+    </div>
+  </header>
+
+  <main style="max-width: 450px; margin: 3rem auto; padding: 2rem; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px;">
+    <h2 style="text-align: center;" data-text="signupTitle">Create Your Account</h2>
+    <form id="signupForm">
+      <label>Name:</label>
+      <input type="text" name="name" required placeholder="Your full name" style="width: 100%; margin-bottom: 1rem;" />
+
+      <label>Email:</label>
+      <input type="email" name="email" required placeholder="you@example.com" style="width: 100%; margin-bottom: 1rem;" />
+
+      <label>Password:</label>
+      <div style="position: relative;">
+        <input type="password" name="password" id="passwordInput" required placeholder="Create a password" style="width: 100%;" />
+        <button type="button" onclick="togglePassword()" style="position: absolute; right: 10px; top: 7px;">👁️</button>
+      </div>
+
+      <label>Confirm Password:</label>
+      <input type="password" name="confirmPassword" required placeholder="Re-enter password" style="width: 100%; margin-bottom: 1rem;" />
+
+      <button type="submit" style="width: 100%; margin-top: 1rem; background: #4a7c59; color: white; padding: 0.7rem; border: none; border-radius: 5px;">Sign Up</button>
+    </form>
+
+    <p style="text-align: center; margin-top: 1rem;">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </main>
+
+  <footer style="text-align: center; padding: 1rem;" data-text="footerText">© 2025 GullyPaw. Every tag makes a difference.</footer>
+
+  <script src="script.js"></script>
+  <script>
+    function togglePassword() {
+      const pwd = document.getElementById('passwordInput');
+      pwd.type = pwd.type === 'password' ? 'text' : 'password';
+    }
+
+    document.getElementById('signupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = e.target.name.value.trim();
+      const email = e.target.email.value.trim();
+      const password = e.target.password.value;
+      const confirm = e.target.confirmPassword.value;
+
+      if (password !== confirm) {
+        showToast('Passwords do not match.');
+        return;
+      }
+
+      if (!name || !email || !password || !confirm) {
+        showToast('Please fill out all fields.');
+        return;
+      }
+
+      // Placeholder logic
+      showToast('Signup successful! Logging in...');
+      setTimeout(() => window.location.href = 'index.html', 1500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GullyPaw - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="gullypawlogo.png">
+</head>
+
+<body>
+  <header style="display: flex; flex-direction: column; align-items: center;">
+    <img src="gullypawlogo.png" alt="GullyPaw Logo" style="height: 60px; margin-bottom: 0.5rem;">
+    <div class="logo" data-text="appName">GullyPaw</div>
+
+    <nav>
+      <a href="index.html" data-text="navHome">Home</a>
+      <a href="about.html" data-text="navAbout">About</a>
+      <a href="features.html" data-text="navFeatures">Features</a>
+      <a href="impact.html" data-text="navImpact">Impact</a>
+      <a href="adopt.html" data-text="navAdopt">Adopt</a>
+      <a href="feed.html" data-text="navFeed">Feed</a>
+      <a href="report.html" data-text="navReport">Report</a>
+      <a href="login.html" data-text="navLogin">Login</a>
+      <button id="dark-toggle">🌓 <span data-text="darkToggle">Toggle Dark Mode</span></button>
+    </nav>
+
+    <select id="language-selector" style="margin-left: auto;">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="kn">ಕನ್ನಡ</option>
+    </select>
+  </header>
+
+  <main style="max-width: 800px; margin: 3rem auto; padding: 2rem; text-align: center;">
+    <h1 data-text="headline">Snap. Tag. Save a Life.</h1>
+<p style="font-size: 1.2rem; margin: 1rem auto;" data-text="intro">
+  GullyPaw is your street dog rescue assistant. Join a youth-led movement using AI and compassion to protect our street dogs.
+</p>
+<a href="report.html" data-text="reportBtn" style="display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background-color: var(--primary-color); color: white; border-radius: 6px; text-decoration: none; font-weight: bold;">Report a Dog</a>
+
+  </main>
+
+  <footer>
+    <p data-text="footerText">&copy; 2025 GullyPaw. Every tag makes a difference.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  document.getElementById('language-selector').addEventListener('change', () => {
+    const lang = document.getElementById('language-selector').value;
+    const strings = {
+      en: {
+        headline: "Snap. Tag. Save a Life.",
+        intro: "GullyPaw is your street dog rescue assistant. Join a youth-led movement using AI and compassion to protect our street dogs.",
+        reportBtn: "Report a Dog"
+      },
+      hi: {
+        headline: "फोटो लें, टैग करें, जान बचाएं।",
+        intro: "गलीपॉ एक स्ट्रीट डॉग रेस्क्यू सहायक है। यह एआई और करुणा के साथ कुत्तों को बचाने की एक युवा पहल है।",
+        reportBtn: "कुत्ते की रिपोर्ट करें"
+      },
+      kn: {
+        headline: "ಫೋಟೋ ತೆಗೆದುಕೊಳ್ಳಿ, ಟ್ಯಾಗ್ ಮಾಡಿ, ಪ್ರಾಣ ಉಳಿಸಿ.",
+        intro: "ಗುಲ್ಲಿಪಾ ನಿಮ್ಮ ಬೀದಿ ನಾಯಿಯ ರಕ್ಷಣಾ ಸಹಾಯಕರಾಗಿದೆ. ಇದು ಯುವ ಶಕ್ತಿಯೊಂದಿಗೆ ಆ್ಯಐ ಬಳಸುವ ಒಂದು ಮುಂದಾಳತ್ವವಾಗಿದೆ.",
+        reportBtn: "ನಾಯಿ ವರದಿ ಮಾಡಿ"
+      }
+    };
+    const t = strings[lang];
+    for (const key in t) {
+      const el = document.querySelector(`[data-text="${key}"]`);
+      if (el) el.innerText = t[key];
+    }
+  });
+</script>
+
+</body>
+</html>

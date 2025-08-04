@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Impact - GullyPaw</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="gullypawlogo.png" type="image/png"/>
+</head>
+<body>
+
+  <header style="display: flex; flex-direction: column; align-items: center;">
+    <img src="gullypawlogo.png" alt="GullyPaw Logo" style="height: 60px; margin-bottom: 0.5rem;">
+    <div class="logo">GullyPaw</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="impact.html">Impact</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="feed.html">Feed</a>
+      <a href="report.html">Report</a>
+      <a href="login.html">Login</a>
+      <button id="dark-toggle">🌓 Toggle Dark Mode</button>
+    </nav>
+    <select id="language-selector" style="margin-left: auto;">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="kn">ಕನ್ನಡ</option>
+    </select>
+  </header>
+
+  <main>
+    <h2 data-text="impactTitle">Our Impact</h2>
+    <ul>
+      <li data-text="i1">✅ Over 500 stray dogs tagged within pilot zones</li>
+      <li data-text="i2">🏥 Partnered with 6 NGOs for rescue operations</li>
+      <li data-text="i3">🎒 2,000+ students engaged in animal welfare clubs</li>
+      <li data-text="i4">🌍 AI-powered mapping used by local civic bodies</li>
+      <li data-text="i5">🐾 ₹50,000+ raised through community feeding and adoption</li>
+    </ul>
+
+    <h3 data-text="impactMission">Why it Matters</h3>
+    <p data-text="impactPara">
+      GullyPaw turns ordinary citizens into life-savers. Every photo, every alert, every tag — it all counts toward building kinder streets and giving a second chance to voiceless beings.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GullyPaw. Every tag makes a difference.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('language-selector').addEventListener('change', () => {
+      const lang = document.getElementById('language-selector').value;
+      const strings = {
+        en: {
+          impactTitle: "Our Impact",
+          i1: "✅ Over 500 stray dogs tagged within pilot zones",
+          i2: "🏥 Partnered with 6 NGOs for rescue operations",
+          i3: "🎒 2,000+ students engaged in animal welfare clubs",
+          i4: "🌍 AI-powered mapping used by local civic bodies",
+          i5: "🐾 ₹50,000+ raised through community feeding and adoption",
+          impactMission: "Why it Matters",
+          impactPara: "GullyPaw turns ordinary citizens into life-savers. Every photo, every alert, every tag — it all counts toward building kinder streets and giving a second chance to voiceless beings."
+        },
+        hi: {
+          impactTitle: "हमारा प्रभाव",
+          i1: "✅ पायलट क्षेत्रों में 500 से अधिक आवारा कुत्तों की टैगिंग",
+          i2: "🏥 6 NGOs के साथ बचाव के लिए साझेदारी",
+          i3: "🎒 2,000+ छात्र पशु कल्याण क्लबों में शामिल",
+          i4: "🌍 स्थानीय निकायों द्वारा उपयोग की जा रही AI-मैपिंग",
+          i5: "🐾 ₹50,000+ सामुदायिक फीडिंग और गोद लेने से जुटाए गए",
+          impactMission: "यह क्यों मायने रखता है",
+          impactPara: "गलीपॉ सामान्य नागरिकों को जीवन रक्षक बनाता है। हर फोटो, हर अलर्ट, हर टैग एक दया से भरी सड़क की ओर एक कदम है।"
+        },
+        kn: {
+          impactTitle: "ನಮ್ಮ ಪ್ರಭಾವ",
+          i1: "✅ ಪೈಲಟ್ ವಲಯಗಳಲ್ಲಿ 500+ ತ್ಯಜಿಸಿದ ನಾಯಿಗಳಿಗೆ ಟ್ಯಾಗ್ ಮಾಡಲಾಗಿದೆ",
+          i2: "🏥 6 ಎನ್‌ಜಿಒಗಳೊಂದಿಗೆ ರೆಸ್ಕ್ಯೂ ಸಹಭಾಗಿತ್ವ",
+          i3: "🎒 2,000+ ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ರಾಣಿವಿಧಾನ ಕ್ಲಬ್‌ಗಳಲ್ಲಿ ತೊಡಗಿಸಿಕೊಂಡಿದ್ದಾರೆ",
+          i4: "🌍 ಸ್ಥಳೀಯ ಸಂಸ್ಥೆಗಳು ಬಳಸುತ್ತಿರುವ ಎಐ ನಕ್ಷೆ ನಿರ್ಮಾಣ",
+          i5: "🐾 ಸಮುದಾಯ ಆಹಾರ ಮತ್ತು ದತ್ತು ಕಾರ್ಯಕ್ರಮಗಳಿಂದ ₹50,000+ ಸಂಗ್ರಹ",
+          impactMission: "ಏಕೆ ಇದು ಮಹತ್ವಪೂರ್ಣ",
+          impactPara: "ಗುಲ್ಲಿಪಾ ಸಾಮಾನ್ಯ ನಾಗರಿಕರನ್ನು ಜೀವ ರಕ್ಷಕರಾಗಿಸುತ್ತದೆ. ಪ್ರತಿಯೊಂದು ಫೋಟೋ, ಪ್ರತಿಯೊಂದು ಎಚ್ಚರಿಕೆ, ಪ್ರತಿಯೊಂದು ಟ್ಯಾಗ್ — ಇದು ದಯಾಳು ರಸ್ತೆಗಳ ನಿರ್ಮಾಣದ ಕಡೆಗೆ ಹೆಜ್ಜೆಯಾಗಿದೆ."
+        }
+      };
+
+      const t = strings[lang];
+      for (const key in t) {
+        const el = document.querySelector(`[data-text="${key}"]`);
+        if (el) el.innerText = t[key];
+      }
+    });
+  </script>
+
+</body>
+</html>

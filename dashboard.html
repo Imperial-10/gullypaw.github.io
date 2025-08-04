@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GullyPaw Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="gullypawlogo.png">
+</head>
+<body>
+  <header style="display: flex; flex-direction: column; align-items: center;">
+    <img src="gullypawlogo.png" alt="GullyPaw Logo" style="height: 60px; margin-bottom: 0.5rem;">
+    <div class="logo">GullyPaw</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="impact.html">Impact</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="feed.html">Feed</a>
+      <a href="report.html">Report</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Login</a>
+      <button id="dark-toggle">🌓 Toggle Dark Mode</button>
+    </nav>
+    <select id="language-selector" style="margin-left: auto;">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="kn">ಕನ್ನಡ</option>
+    </select>
+  </header>
+
+  <main>
+    <h1 data-text="profileTitle">Your GullyPaw Profile</h1>
+    <p data-text="profileDesc">Here’s how you’ve helped our furry friends so far.</p>
+
+    <ul style="margin-top: 2rem;">
+      <li data-text="dogsReported">Total Dogs Reported: 12</li>
+      <li data-text="dogsFed">Dogs Fed: 8</li>
+      <li data-text="dogsAdopted">Dogs Adopted: 2</li>
+      <li data-text="pawPoints">PawPoints Earned: 85</li>
+      <li data-text="badges">Badges: 🥇 Street Saviour, 🐾 Loyal Rescuer</li>
+    </ul>
+
+    <div style="margin-top: 2rem;">
+      <button onclick="showToast('Coming soon: Invite friends & earn PawPoints!')" style="padding: 10px 20px; border-radius: 6px; background: var(--primary-color); color: white; border: none;">Invite Friends</button>
+      <button onclick="showToast('Feature coming soon!')" style="padding: 10px 20px; border-radius: 6px; background: var(--secondary-color); color: white; border: none; margin-left: 10px;">Download Report</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GullyPaw. Keep tagging, keep saving lives.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

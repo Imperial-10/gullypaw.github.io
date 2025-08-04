@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feed a Dog – GullyPaw</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/png" href="gullypawlogo.png"/>
+</head>
+<body>
+  <header style="display: flex; flex-direction: column; align-items: center;">
+    <img src="gullypawlogo.png" alt="GullyPaw Logo" style="height: 60px; margin-bottom: 0.5rem;">
+    <div class="logo">GullyPaw</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="impact.html">Impact</a>
+      <a href="adopt.html">Adopt</a>
+      <a href="feed.html">Feed</a>
+      <a href="report.html">Report</a>
+      <a href="login.html">Login</a>
+      <button id="dark-toggle">🌓 Toggle Dark Mode</button>
+    </nav>
+    <select id="language-selector" style="margin-left: auto;">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="kn">ಕನ್ನಡ</option>
+    </select>
+  </header>
+
+  <main>
+    <h2 data-text="feedHeader">Feed a Dog, Earn a PawPoint!</h2>
+    <p data-text="feedText">If you've fed a street dog today, log it here to help us track real impact.</p>
+
+    <form id="feedForm" style="margin-top: 2rem;">
+      <label for="dogDescription" data-text="descLabel">Describe the dog or its location:</label><br>
+      <textarea id="dogDescription" name="dogDescription" required style="width: 100%; height: 100px; margin-bottom: 1rem;"></textarea><br>
+      <label for="photoUpload" data-text="photoLabel">Upload a photo:</label><br>
+      <input type="file" id="photoUpload" name="photoUpload" required accept="image/*" /><br><br>
+      <input type="submit" value="I fed this dog" data-text="submitFeed" />
+    </form>
+
+    <hr style="margin: 3rem 0;"/>
+
+    <h3 data-text="donateTitle">Or, donate ₹20 and we'll feed a dog for you!</h3>
+    <button id="donate-btn" style="padding: 0.8rem 1.5rem; background-color: #4a7c59; color: white; border: none; border-radius: 8px; cursor: pointer;" data-text="donateBtn">
+      Feed a Dog for ₹20
+    </button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GullyPaw. Every meal matters.</p>
+  </footer>
+
+  <script>
+    function showToast(message) {
+      let toast = document.createElement('div');
+      toast.innerText = message;
+      toast.style.position = 'fixed';
+      toast.style.bottom = '30px';
+      toast.style.left = '50%';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.background = '#4a7c59';
+      toast.style.color = '#fff';
+      toast.style.padding = '10px 20px';
+      toast.style.borderRadius = '8px';
+      toast.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+      toast.style.zIndex = '1000';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    document.getElementById('feedForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const desc = document.getElementById('dogDescription').value.trim();
+      const photo = document.getElementById('photoUpload').files.length;
+      if (!desc || !photo) {
+        alert('Please fill all fields and upload a photo.');
+        return;
+      }
+      alert("✅ Your report has been recorded! Thank you for feeding a stray. GullyPaw loves you 🐾");
+      document.getElementById('feedForm').reset();
+    });
+
+    // Language switcher
+    document.getElementById('language-selector').addEventListener('change', () => {
+      const lang = document.getElementById('language-selector').value;
+      const strings = {
+        en: {
+          feedHeader: "Feed a Dog, Earn a PawPoint!",
+          feedText: "If you've fed a street dog today, log it here to help us track real impact.",
+          descLabel: "Describe the dog or its location:",
+          photoLabel: "Upload a photo:",
+          submitFeed: "I fed this dog",
+          donateTitle: "Or, donate ₹20 and we'll feed a dog for you!",
+          donateBtn: "Feed a Dog for ₹20"
+        },
+        hi: {
+          feedHeader: "कुत्ते को खाना खिलाएं, पॉइंट्स कमाएं!",
+          feedText: "अगर आपने आज एक आवारा कुत्ते को खाना खिलाया है, तो यहाँ लॉग करें।",
+          descLabel: "कुत्ते या उसके स्थान का वर्णन करें:",
+          photoLabel: "एक फोटो अपलोड करें:",
+          submitFeed: "मैंने इस कुत्ते को खाना खिलाया",
+          donateTitle: "या ₹20 का दान करें और हम आपके लिए एक कुत्ते को खाना खिलाएंगे!",
+          donateBtn: "₹20 देकर एक कुत्ते को खाना खिलाएं"
+        },
+        kn: {
+          feedHeader: "ನಾಯಿಗೆ ಆಹಾರ ನೀಡಿ, ಪಾಯಿಂಟ್ ಗಳಿಸಿ!",
+          feedText: "ನೀವು ಇಂದು ಬೀದಿ ನಾಯಿಗೆ ಆಹಾರ ನೀಡಿದ್ದರೆ, ಇಲ್ಲಿ ದಾಖಲಿಸಿ.",
+          descLabel: "ನಾಯಿ ಅಥವಾ ಅದರ ಸ್ಥಳವನ್ನು ವಿವರಿಸಿ:",
+          photoLabel: "ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ:",
+          submitFeed: "ನಾನು ಈ ನಾಯಿಗೆ ಆಹಾರ ನೀಡಿದ್ದೇನೆ",
+          donateTitle: "ಅಥವಾ ₹20 ದಾನ ಮಾಡಿ — ನಾವು ನಿಮ್ಮ ಪರವಾಗಿ ಆಹಾರ ನೀಡುತ್ತೇವೆ!",
+          donateBtn: "₹20 ಗೆ ನಾಯಿಗೆ ಆಹಾರ ನೀಡಿ"
+        }
+      };
+      const t = strings[lang];
+      for (const key in t) {
+        const el = document.querySelector(`[data-text="${key}"]`);
+        if (el) el.innerText = t[key];
+      }
+    });
+
+    document.getElementById('donate-btn').addEventListener('click', () => {
+      showToast("✅ Thank you for donating ₹20! An NGO partner will feed a dog on your behalf. 🐶");
+    });
+
+    document.getElementById('dark-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      showToast(document.body.classList.contains('dark') ? 'Dark Mode On' : 'Light Mode Off');
+    });
+  </script>
+</body>
+</html>

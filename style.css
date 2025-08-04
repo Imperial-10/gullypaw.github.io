@@ -1,0 +1,200 @@
+/* style.css for GullyPaw */
+
+:root {
+  --primary-color: #4a7c59;
+  --secondary-color: #f4a261;
+  --background-color: #fefefe;
+  --text-color: #333;
+  --font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+header {
+  background-color: white;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+main, .report-container, .dog-card, .adopt-list li, ul li {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.report-container h2 {
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.report-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.report-container textarea,
+.report-container input[type="file"],
+.report-container input[type="submit"],
+.report-container input[type="text"],
+.report-container input[type="email"],
+select {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.report-container input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.report-container input[type="submit"]:hover {
+  background-color: #3f674d;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #f6fff9;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: #f7f7f7;
+  color: #555;
+  border-top: 1px solid #ddd;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.toggle-btn, .moon-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  z-index: 100;
+}
+
+.toggle-btn:hover, .moon-icon:hover {
+  background: var(--secondary-color);
+}
+
+/* 🌙 Dark Mode Styles */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark header,
+body.dark main,
+body.dark .report-container,
+body.dark .dog-card,
+body.dark ul li,
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border-color: var(--secondary-color);
+}
+
+body.dark nav a {
+  color: var(--secondary-color);
+}
+
+body.dark footer {
+  background-color: #121212;
+  color: #ccc;
+}
+
+body.dark .toggle-btn,
+body.dark .moon-icon {
+  background-color: #f4a261;
+  color: #1e1e1e;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .report-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .toggle-btn, .moon-icon {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
